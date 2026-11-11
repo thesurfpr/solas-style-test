@@ -1,0 +1,280 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Solas Surf · Home page test</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT@0,9..144,300..500,100;1,9..144,300..500,100&family=Albert+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.19.0/dist/tabler-icons.min.css">
+<style>
+:root{
+  --cream:#E7E3DA; --sand:#DCCFBC; --ocean:#00477A; --navy:#003153; --terra:#C16333; --rust:#A94819;
+  --paper:#F5F2EC; --ink:#1E2B36; --ink-soft:#4A5966; --on-dark:#EFE9DE;
+  --serif:'Fraunces', Georgia, serif; --sans:'Albert Sans', system-ui, sans-serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);font-weight:300;font-size:18px;line-height:1.7;-webkit-font-smoothing:antialiased}
+img,video{display:block;max-width:100%}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--terra);outline-offset:3px}
+.wrap{width:min(1180px,100% - 48px);margin-inline:auto}
+
+h1,h2,h3{font-family:var(--serif);font-variation-settings:'SOFT' 100,'opsz' 96;font-weight:400;margin:0}
+h1 em,h2 em,h3 em{font-style:italic;font-weight:300}
+h2{font-size:clamp(36px,4.4vw,56px);line-height:1.06;margin-bottom:22px;color:var(--navy)}
+h3{font-size:30px;line-height:1.15;margin-bottom:6px;color:var(--navy)}
+.lede{font-size:21px;max-width:52ch}
+
+.test-note{background:var(--ocean);color:#fff;font-size:13px;font-weight:400;text-align:center;padding:7px 16px}
+
+/* cream bar with logo and menu */
+header.site{position:sticky;top:0;z-index:10;background:var(--paper);border-bottom:1px solid rgba(0,49,83,.1)}
+header.site .wrap{display:flex;align-items:center;gap:28px;height:84px}
+.logo img{height:48px;width:auto}
+nav.main{display:flex;gap:24px;margin-left:auto;font-size:15px;font-weight:400}
+nav.main a{text-decoration:none;color:var(--ink-soft)}
+nav.main a:hover{color:var(--navy);text-decoration:underline;text-underline-offset:6px}
+.btn{display:inline-block;font-family:var(--sans);font-weight:500;font-size:14px;letter-spacing:.06em;text-transform:uppercase;text-decoration:none;padding:14px 26px;border-radius:2px;border:1px solid transparent;cursor:pointer;transition:background .2s,color .2s}
+.btn-terra{background:var(--terra);color:#fff}
+.btn-terra:hover{background:var(--rust)}
+.btn-line{border-color:currentColor}
+.menu-btn{display:none;background:none;border:1px solid rgba(0,49,83,.3);padding:9px 12px;font:inherit;font-size:14px;color:var(--navy)}
+
+/* hero clip, warm wash */
+.hero{position:relative;height:min(86vh,820px);min-height:540px;display:grid;align-items:end;color:#fff;overflow:hidden;background:#111}
+.hero video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.08) 0%,rgba(0,0,0,0) 30%,rgba(0,0,0,.18) 55%,rgba(0,0,0,.5) 100%)}
+.hero h1,.hero p{text-shadow:0 1px 18px rgba(0,0,0,.25)}
+.hero h1.long{font-size:clamp(38px,5vw,68px);max-width:22ch}
+.hero .wrap{position:relative;z-index:1;padding-bottom:72px}
+.hero h1{font-variation-settings:'SOFT' 100,'opsz' 144;font-size:clamp(42px,6.4vw,86px);line-height:1.02;letter-spacing:-.01em;margin-bottom:14px;max-width:15ch;color:#fff}
+.hero p{font-family:var(--serif);font-variation-settings:'SOFT' 100,'opsz' 36;font-size:24px;margin:0 0 30px}
+.hero .actions{display:flex;gap:14px;flex-wrap:wrap}
+
+section{padding:104px 0}
+.split{display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:center}
+
+/* blocks */
+.b-paper{background:var(--paper)}
+.b-sand{background:var(--sand)}
+.b-cream{background:var(--cream)}
+.b-navy{background:var(--navy);color:var(--on-dark)}
+.b-ocean{background:var(--ocean);color:var(--on-dark)}
+.b-terra{background:var(--terra);color:#fff}
+.b-navy h2,.b-ocean h2,.b-navy h3,.b-ocean h3{color:var(--on-dark)}
+.b-terra h2{color:#fff}
+
+.intro img{aspect-ratio:4/5;object-fit:cover;width:100%}
+.intro figure{margin:0}
+.intro figcaption{font-size:13px;color:var(--ink-soft);margin-top:10px}
+
+.stays header{display:flex;justify-content:space-between;align-items:end;gap:24px;margin-bottom:44px}
+.stays header h2{margin:0}
+.stay-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:32px}
+.stay img{aspect-ratio:4/5;object-fit:cover;width:100%;margin-bottom:22px}
+.stay p{margin:0 0 16px;color:var(--ink-soft)}
+.stay .price{font-size:14px;font-weight:500;color:var(--rust);margin-bottom:12px}
+.stay a{font-weight:500;color:var(--ocean);text-underline-offset:5px}
+
+.full{padding:0}
+.full .split{gap:0;width:100%;max-width:none;min-height:600px;align-items:stretch}
+.full img{width:100%;height:100%;object-fit:cover}
+.full .copy{padding:88px clamp(28px,6vw,104px);align-self:center}
+.full .copy p{max-width:42ch;margin:0 0 14px}
+.b-navy .copy p,.b-ocean .copy p{color:rgba(239,233,222,.88)}
+.b-terra .copy p{color:rgba(255,255,255,.92)}
+
+.review-slot{border:1px dashed rgba(0,49,83,.35);padding:32px;display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.review-slot div{background:var(--cream);height:150px}
+.note{font-size:14px;color:var(--ink-soft);margin-top:12px}
+.ph{font-size:13px;opacity:.8;margin-top:8px}
+
+footer{background:var(--terra);color:#fff;font-size:16px;line-height:1.7}
+footer .top{display:flex;justify-content:space-between;align-items:center;gap:32px;flex-wrap:wrap;padding:80px 0 48px}
+footer h2{color:#fff;margin:0}
+footer .btn{background:var(--paper);color:var(--rust)}
+footer .btn:hover{background:#fff}
+footer .info{display:flex;justify-content:space-between;gap:28px 40px;flex-wrap:wrap;padding:32px 0}
+footer .item{display:flex;gap:12px;align-items:flex-start;color:#fff;text-decoration:none}
+footer .item i{font-size:22px;line-height:1.3;opacity:.95}
+footer a.item:hover span{text-decoration:underline;text-underline-offset:4px}
+footer .social{display:flex;gap:16px}
+footer .social a{color:#fff;font-size:24px;text-decoration:none}
+footer .legal{padding:0 0 28px;font-size:13px;color:rgba(255,255,255,.8)}
+footer .legal a{color:rgba(255,255,255,.85);margin-left:16px}
+
+@media (max-width: 980px){
+  nav.main{display:none}
+  .menu-btn{display:inline-block}
+  header.site .btn-terra{margin-left:auto;padding:11px 16px}
+  .split{grid-template-columns:1fr;gap:40px}
+  .full .split{min-height:0}
+  .full img{aspect-ratio:4/3;height:auto}
+  .full .copy{padding:56px 24px 64px}
+  .stay-grid{grid-template-columns:1fr;gap:56px}
+  .stays header{flex-direction:column;align-items:start}
+  .review-slot{grid-template-columns:1fr;padding:20px}
+  section{padding:72px 0}
+  footer .top{padding:64px 0 40px}
+}
+@media (max-width: 560px){
+  footer .info{flex-direction:column}
+  .hero h1{font-size:38px}
+}
+@media (max-width: 560px){
+  header.site .wrap{height:70px;gap:12px}
+  .logo img{height:36px}
+  .hero{height:80vh}
+  .hero .wrap{padding-bottom:44px}
+  .hero p{font-size:20px}
+  .lede{font-size:19px}
+}
+@media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}.btn{transition:none}}
+</style>
+</head>
+<body>
+
+
+<header class="site">
+  <div class="wrap">
+    <a class="logo" href="#"><img src="img/solas-logo.svg" alt="Solas Surf"></a>
+    <nav class="main" aria-label="Main">
+      <a href="#">The Retreat</a>
+      <a href="#stays">Surf &amp; Yoga</a>
+      <a href="#stays">Yoga &amp; Relax</a>
+      <a href="#stays">Stay Only</a>
+      <a href="#place">Kabalana</a>
+      <a href="#">Our Story</a>
+      <a href="#">FAQ</a>
+    </nav>
+    <a class="btn btn-terra" href="#book">Book now</a>
+    <button class="menu-btn" aria-label="Open menu">Menu</button>
+  </div>
+</header>
+
+<main>
+  <section class="hero" style="padding:0">
+    <video autoplay muted loop playsinline poster="img/olas-placeholder.jpg">
+      <source src="img/hero.mp4" type="video/mp4">
+    </video>
+    <div class="wrap">
+      <h1 class="long">An intimate surf and yoga retreat on Sri Lanka's <em>south coast</em></h1>
+      <p>Kabalana Beach, Ahangama</p>
+      <div class="actions">
+        <a class="btn btn-terra" href="#stays">See the stays</a>
+        <a class="btn btn-line" href="#">Check dates</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="intro b-paper">
+    <div class="wrap split">
+      <div>
+        <h2>Welcome to <em>Solas</em></h2>
+        <p class="lede">A tropical paradise with a vibrant community and some of the island's most unique coastlines, perfect for surfing, no matter your level.</p>
+        <p>Our teachers guide you through surf and yoga with clear guidance and a personalized approach, combined with fresh meals and the lush comfort of our beachfront villa.</p>
+      </div>
+      <figure>
+        <img src="img/habitacion-mandala-2.jpg" style="object-position:30% 50%" alt="Bedroom with carved white mandala headboard and blue cushions">
+        <figcaption>One of the five renovated rooms</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section class="full b-terra" aria-label="Life at Solas">
+    <div class="wrap split">
+      <img src="img/ambiente-cocos.jpg" style="object-position:50% 55%" alt="Four guests toasting with king coconuts around a teak table">
+      <div class="copy">
+        <h2>A great atmosphere and <em>vibe</em></h2>
+        <p>High quality facilities, fresh meals and the lush comfort of our beachfront villa.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="stays b-cream" id="stays">
+    <div class="wrap">
+      <header>
+        <h2>Three ways to <em>stay</em></h2>
+        <a class="btn btn-line" href="#" style="color:var(--navy)">Compare the stays</a>
+      </header>
+      <div class="stay-grid">
+        <article class="stay">
+          <img src="img/surf-yoga.jpg" style="object-position:50% 50%" alt="A guest riding the whitewater while two coaches cheer">
+          <h3>Surf &amp; <em>Yoga</em></h3>
+          <p class="price">The week, with its price</p>
+          <p>A beach break perfect for beginners and a reef break for more advanced surfers, right outside your room.</p>
+          <a href="#">See the week</a>
+        </article>
+        <article class="stay">
+          <img src="img/1.2-scaled.jpg" style="object-position:62% 50%" alt="Yoga practice in the shala">
+          <h3>Yoga &amp; <em>Relax</em></h3>
+          <p class="price">The week, with its price</p>
+          <p>Active morning Hatha or Vinyasa practice and soothing sunset yin sessions, lulled by the sound of the waves.</p>
+          <a href="#">See the week</a>
+        </article>
+        <article class="stay">
+          <img src="img/extra.jpg" alt="Bedroom with timber ceiling and woven headboard">
+          <h3>Stay <em>Only</em></h3>
+          <p class="price">The stay, with its price</p>
+          <p>Fresh meals and the lush comfort of our beachfront villa, at your own pace.</p>
+          <a href="#">See the stay</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="full b-navy">
+    <div class="wrap split">
+      <img src="img/plato.jpg" alt="A plated dish served on a hand-woven placemat">
+      <div class="copy">
+        <h2>Fresh meals, served at the <em>table</em></h2>
+        <p>Fresh meals from our kitchen, brought to your table.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="reviews b-paper">
+    <div class="wrap">
+      <h2>What guests <em>say</em></h2>
+      <div class="review-slot" aria-label="Reviews placeholder"><div></div><div></div><div></div></div>
+      <p class="note">Your real reviews appear here, pulled live from your reviews platform.</p>
+    </div>
+  </section>
+
+  <section class="full b-ocean" id="place">
+    <div class="wrap split">
+      <div class="copy">
+        <h2>Surfing right at your <em>doorstep</em></h2>
+        <p>Kabalana Beach, on the south coast of Sri Lanka.</p>
+        <p>Right outside your room you find a beach break perfect for beginners and a reef break for more advanced surfers.</p>
+        <a href="#" style="font-weight:500;color:#fff;text-underline-offset:5px">About Kabalana</a>
+      </div>
+      <img src="img/surf-ola.jpg" style="object-position:55% 50%" alt="A surfer on a reef wave in front of the palms">
+    </div>
+  </section>
+</main>
+
+<footer id="book">
+  <div class="wrap top">
+    <h2>Plan your week at <em>Solas</em></h2>
+    <a class="btn" href="#">Book now</a>
+  </div>
+  <div class="wrap info">
+    <a class="item" href="#"><i class="ti ti-map-pin" aria-hidden="true"></i><span>Matara Road, Kabalana Beach<br>Ahangama 80650, Sri Lanka</span></a>
+    <a class="item" href="#"><i class="ti ti-brand-whatsapp" aria-hidden="true"></i><span>+94 76 773 4849</span></a>
+    <a class="item" href="#"><i class="ti ti-mail" aria-hidden="true"></i><span>info@solassurf.com</span></a>
+    <div class="social">
+      <a href="#" aria-label="Instagram"><i class="ti ti-brand-instagram"></i></a>
+      <a href="#" aria-label="Facebook"><i class="ti ti-brand-facebook"></i></a>
+      <a href="#" aria-label="YouTube"><i class="ti ti-brand-youtube"></i></a>
+    </div>
+  </div>
+  <div class="wrap legal">© 2026 Solas Surf <a href="#">Terms</a><a href="#">Privacy</a><a href="#">Cookies</a></div>
+</footer>
+
+</body>
+</html>
